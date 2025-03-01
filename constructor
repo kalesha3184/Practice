@@ -1,0 +1,22 @@
+/*output:- PS C:\Users\kalesha\OneDrive\Desktop\java> javac ConstructorExample.java
+PS C:\Users\kalesha\OneDrive\Desktop\java> java ConstructorExample.java 
+Name: Sk Kaleshavali
+Age: 22 */
+class Person {
+    String name;
+    int age;
+    Person(String ersonName, int PersonAge) {
+        name = PersonName;
+        age = PersonAge;
+    }
+    void displayInfo() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+    }
+}
+public class ConstructorExample extends Person{
+    public static void main(String[] args) {
+        Person person1 = new Person("Sk.kalesha",21);
+        person1.displayInfo();
+    }
+}
