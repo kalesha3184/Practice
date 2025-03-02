@@ -1,0 +1,28 @@
+/*output:- PS C:\Users\kalesha\OneDrive\Desktop\java> javac ExtractNumbers.java
+PS C:\Users\kalesha\OneDrive\Desktop\java> java ExtractNumbers.java 
+!@abvc123A
+123 */
+import java.util.Scanner;
+public class ExtractNumbers
+{
+    public static void main(String[] args)
+    {
+        String Line;
+        Scanner sc= new Scanner(System.in);
+        Line =sc.nextLine();
+        String temp1="",temp2="";
+        for(int i=0;i<Line.length();i++){
+            if(Line.charAt(i)>=48 && Line.charAt(i)<=57)
+            {
+              temp1=temp1+""+Line.charAt(i);  
+            }
+            else
+            {
+                temp2=temp2+""+Line.charAt(i);
+            }
+        }
+        String  res=temp1+temp2;
+    System.out.println(temp1);
+    }
+}
+    
