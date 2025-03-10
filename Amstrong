@@ -1,0 +1,47 @@
+/*output:- PS C:\Users\kalesha\OneDrive\Desktop\java> javac AmstrongNumber.java 
+PS C:\Users\kalesha\OneDrive\Desktop\java> java AmstrongNumber.java 
+Enter a number: 153
+153 is an Armstrong number.
+PS C:\Users\kalesha\OneDrive\Desktop\java> java AmstrongNumber.java
+Enter a number: 118
+118 is not an Armstrong number. */
+import java.util.Scanner;
+public class AmstrongNumber
+{
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        long originalNumber = scanner.nextLong();
+        long temp = originalNumber;
+        int digits = 0;
+        if (originalNumber == 0) {
+            digits = 1;
+        } else {
+            // Count digits
+            temp = originalNumber;
+            while (temp != 0) {
+                temp /= 10;
+                digits++;
+            }
+        }
+        long sum = 0;
+        temp = originalNumber;
+        while (temp != 0) {
+            int digit = (int) (temp % 10);
+            sum += power(digit, digits);
+            temp /= 10;
+        }
+        if (sum == originalNumber) {
+            System.out.println(originalNumber + " is an Armstrong number.");
+        } else {
+            System.out.println(originalNumber + " is not an Armstrong number.");
+        }
+    }
+    private static long power(int digit, int exponent) {
+        long result = 1;
+        for (int i = 0; i < exponent; i++) {
+            result *= digit;
+        }
+        return result;
+    }
+}
